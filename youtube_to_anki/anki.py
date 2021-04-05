@@ -9,21 +9,21 @@ _MODEL = Model(
     1607392319,
     "Youtube",
     fields=[
-        {"name": "JP-Audio"},
-        {"name": "EN-Transcript"},
+        {"name": "TL-Audio"},
+        {"name": "NL-Transcript"},
     ],
     templates=[
         {
             "name": "Card 1",
-            "qfmt": "{{JP-Audio}}",
-            "afmt": '{{FrontSide}}<hr id="answer">{{EN-Transcript}}',
+            "qfmt": "{{TL-Audio}}",
+            "afmt": '{{FrontSide}}<hr id="answer">{{NL-Transcript}}',
         },
     ],
 )
 
 
-def _make_note(en_transcript, jp_audio_file):
-    return Note(model=_MODEL, fields=[f"[sound:{jp_audio_file}]", en_transcript])
+def _make_note(nl_transcript, tl_audio_file):
+    return Note(model=_MODEL, fields=[f"[sound:{tl_audio_file}]", nl_transcript])
 
 
 def make_package(
