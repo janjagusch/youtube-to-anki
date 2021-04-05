@@ -7,6 +7,7 @@ dependencies:
   - youtube-dl
   - click
   - ffmpeg
+  - black
   - pip
   - pip:
     - youtube-transcript-api
