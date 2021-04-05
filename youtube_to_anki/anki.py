@@ -36,8 +36,8 @@ def make_package(
     deck = Deck(deck_id=deck_id, name=deck_name)
     with TemporaryDirectory() as tempdir:
         for i, (audio_chunk, transcript_chunks) in enumerate(zip(audio_chunks, transcript_chunks)):
-            audio_chunk.export(f"{tempdir}/{i}.mp3")
-            note = _make_note(transcript_chunks["text"], f"{i}.mp3")
+            audio_chunk.export(f"{tempdir}/{i}_{deck_id}.mp3")
+            note = _make_note(transcript_chunks["text"], f"{i}_{deck_id}.mp3")
             deck.add_note(note)
         package = Package(deck)
         package.media_files = Path(tempdir).glob("*.mp3")
