@@ -1,0 +1,12 @@
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - genanki
+  - pydub
+  - youtube-dl
+  - click
+  - ffmpeg
+  - pip
+  - pip:
+    - youtube-transcript-api
