@@ -18,13 +18,19 @@ def make_package(transcript: Iterable[Dict], audio: AudioSegment, deck_name: str
 @click.option(
     "--out", default=None, help="Where to export the deck. Defaults to '<deck_name>.apgk'."
 )
+@click.option(
+    "--transcript-language",
+    default="en",
+    help="Which transcript language to use. Defaults to 'en'.",
+)
 @click.argument("video-id")
 def main(
     video_id: str,
+    transcript_language: str,
     out: str,
 ):
     url = f"https://www.youtube.com/watch?v={video_id}"
-    transcript = retrieve_transcript(video_id)
+    transcript = retrieve_transcript(video_id, transcript_language)
     audio = retrieve_audio(url)
     deck_name = retrieve_info(video_id)
     out = out or f"{deck_name}.apkg"
