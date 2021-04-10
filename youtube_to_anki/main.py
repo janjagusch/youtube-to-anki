@@ -5,7 +5,8 @@ from pydub import AudioSegment
 
 from youtube_to_anki.anki import make_package as _make_package
 from youtube_to_anki.utils import process_audio_chunk, process_transcript_chunk
-from youtube_to_anki.youtube import retrieve_audio, retrieve_info, retrieve_transcript
+from youtube_to_anki.youtube import (retrieve_audio, retrieve_info,
+                                     retrieve_transcript)
 
 
 def make_package(
@@ -15,7 +16,7 @@ def make_package(
     audio_chunks = tuple(
         process_audio_chunk(audio, chunk) for chunk in transcript_chunks
     )
-    _make_package(audio_chunks, transcript_chunks, deck_name, hash(deck_name), filepath)
+    _make_package(audio_chunks, transcript_chunks, deck_name, str(hash(deck_name)), filepath)
 
 
 @click.command()
