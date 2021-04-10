@@ -27,7 +27,7 @@ _MODEL = Model(
 )
 
 
-def _make_note(nl_transcript: str, tl_audio_file:  str) -> Note:
+def _make_note(nl_transcript: str, tl_audio_file: str) -> Note:
     """
     Creates an Anki note from a native langauge transcript and a target language audio file.
     """
