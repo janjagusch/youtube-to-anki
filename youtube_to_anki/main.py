@@ -9,8 +9,7 @@ from pydub import AudioSegment
 
 from youtube_to_anki.anki import make_package as _make_package
 from youtube_to_anki.utils import process_audio_chunk, process_transcript_chunk
-from youtube_to_anki.youtube import (retrieve_audio, retrieve_info,
-                                     retrieve_transcript)
+from youtube_to_anki.youtube import retrieve_audio, retrieve_info, retrieve_transcript
 
 
 def make_package(
