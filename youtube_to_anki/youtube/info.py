@@ -1,3 +1,8 @@
+"""
+This module contains functions to retrieve metadata from a YouTube video.
+"""
+
+
 import json
 import urllib
 import urllib.request
@@ -5,6 +10,8 @@ import urllib.request
 
 def retrieve_info(video_id: str) -> str:
     """
+    Retrives video author and title from video id.
+
     Thanks to: https://stackoverflow.com/a/52664178/7380270
     """
     params = {"format": "json", "url": f"https://www.youtube.com/watch?v={video_id}"}
