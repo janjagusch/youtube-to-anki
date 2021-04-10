@@ -1,3 +1,8 @@
+"""
+This module contains functions to make Anki notes and packages.
+"""
+
+
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from typing import Dict, Iterable
@@ -22,7 +27,10 @@ _MODEL = Model(
 )
 
 
-def _make_note(nl_transcript, tl_audio_file):
+def _make_note(nl_transcript: str, tl_audio_file: str) -> Note:
+    """
+    Creates an Anki note from a native langauge transcript and a target language audio file.
+    """
     return Note(model=_MODEL, fields=[f"[sound:{tl_audio_file}]", nl_transcript])
 
 
@@ -33,11 +41,16 @@ def make_package(
     deck_id: str,
     filepath: str,
 ) -> Package:
+    """
+    Creates an Anki deck, packages it and writes it to file path.
+    """
     deck = Deck(deck_id=deck_id, name=deck_name)
     with TemporaryDirectory() as tempdir:
-        for i, (audio_chunk, transcript_chunks) in enumerate(zip(audio_chunks, transcript_chunks)):
+        for i, (audio_chunk, transcript_chunk) in enumerate(
+            zip(audio_chunks, transcript_chunks)
+        ):
             audio_chunk.export(f"{tempdir}/{i}_{deck_id}.mp3")
-            note = _make_note(transcript_chunks["text"], f"{i}_{deck_id}.mp3")
+            note = _make_note(transcript_chunk["text"], f"{i}_{deck_id}.mp3")
             deck.add_note(note)
         package = Package(deck)
         package.media_files = Path(tempdir).glob("*.mp3")
