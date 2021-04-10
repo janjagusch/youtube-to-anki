@@ -8,15 +8,21 @@ from youtube_to_anki.utils import process_audio_chunk, process_transcript_chunk
 from youtube_to_anki.youtube import retrieve_audio, retrieve_info, retrieve_transcript
 
 
-def make_package(transcript: Iterable[Dict], audio: AudioSegment, deck_name: str, filepath: str):
+def make_package(
+    transcript: Iterable[Dict], audio: AudioSegment, deck_name: str, filepath: str
+):
     transcript_chunks = tuple(process_transcript_chunk(chunk) for chunk in transcript)
-    audio_chunks = tuple(process_audio_chunk(audio, chunk) for chunk in transcript_chunks)
+    audio_chunks = tuple(
+        process_audio_chunk(audio, chunk) for chunk in transcript_chunks
+    )
     _make_package(audio_chunks, transcript_chunks, deck_name, hash(deck_name), filepath)
 
 
 @click.command()
 @click.option(
-    "--out", default=None, help="Where to export the deck. Defaults to '<deck_name>.apgk'."
+    "--out",
+    default=None,
+    help="Where to export the deck. Defaults to '<deck_name>.apgk'.",
 )
 @click.option(
     "--transcript-language",
