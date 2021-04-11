@@ -47,3 +47,8 @@ youtube-to-anki produces an `.apkg` file, which can easily be imported into Anki
 ## Listing Available Transcripts
 
 youtube-to-anki calls [youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) for requesting the video transcripts. If you're unsure what value to provide to the `--transcript-language` option, you can list all available languages with `youtube_transcript_api --list-transcripts <video_id>`.
+
+## Good Example Videos
+
+- 🇯🇵: [Yuzuhiko's Cat Hands EP 280 | Atashin'chi](https://www.youtube.com/watch?v=Uw6ONSGyWZ4)
+- 🇩🇪: [Nicos Weg – A1 – Folge 3: Tschüss!](https://www.youtube.com/watch?v=idFrq0H1Af0) (here you'll have to set `--transcript-language de`)
