@@ -8,7 +8,7 @@ python-versions = "*"
 
 [[package]]
 name = "astroid"
-version = "2.5.2"
+version = "2.5.3"
 description = "An abstract syntax tree for Python with inference support."
 category = "dev"
 optional = false
@@ -68,7 +68,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 name = "click"
 version = "7.1.2"
 description = "Composable command line interface toolkit"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
@@ -294,7 +294,7 @@ python-versions = "*"
 
 [[package]]
 name = "youtube-transcript-api"
-version = "0.4.0"
+version = "0.4.1"
 description = "This is an python API which allows you to get the transcripts/subtitles for a given YouTube video. It also works for automatically generated subtitles, supports translating subtitles and it does not require a headless browser, like other selenium based solutions do!"
 category = "main"
 optional = false
@@ -306,7 +306,7 @@ requests = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "01e72d400fc99419394bd9af20129e496088384122fad8304e71c9f015cb570a"
+content-hash = "ae84524ec495a3bab9d61d4bb5db50a7d0e6000fe89949ef4bff3e5bb89a8294"
 
 [metadata.files]
 appdirs = [
@@ -314,8 +314,8 @@ appdirs = [
     {file = "appdirs-1.4.4.tar.gz", hash = "sha256:7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"},
 ]
 astroid = [
-    {file = "astroid-2.5.2-py3-none-any.whl", hash = "sha256:cd80bf957c49765dce6d92c43163ff9d2abc43132ce64d4b1b47717c6d2522df"},
-    {file = "astroid-2.5.2.tar.gz", hash = "sha256:6b0ed1af831570e500e2437625979eaa3b36011f66ddfc4ce930128610258ca9"},
+    {file = "astroid-2.5.3-py3-none-any.whl", hash = "sha256:bea3f32799fbb8581f58431c12591bc20ce11cbc90ad82e2ea5717d94f2080d5"},
+    {file = "astroid-2.5.3.tar.gz", hash = "sha256:ad63b8552c70939568966811a088ef0bc880f99a24a00834abd0e3681b514f91"},
 ]
 black = [
     {file = "black-20.8b1.tar.gz", hash = "sha256:1c02557aa099101b9d21496f8a914e9ed2222ef70336404eeeac8edba836fbea"},
@@ -549,6 +549,6 @@ youtube-dl = [
     {file = "youtube_dl-2021.4.7.tar.gz", hash = "sha256:34a034d9b2062e428710d4cd6365db7a64cd388e51a3f9ab74058179c95d8654"},
 ]
 youtube-transcript-api = [
-    {file = "youtube_transcript_api-0.4.0-py3-none-any.whl", hash = "sha256:cd4b204196e38a7e2acb943c9a5be4f8318c67aa55c680c12bd9bf4fa9299907"},
-    {file = "youtube_transcript_api-0.4.0.tar.gz", hash = "sha256:6e20bfc8a9b336f06082059b1a7862c499bf10b174ad877a380dcfdb51f984ee"},
+    {file = "youtube_transcript_api-0.4.1-py3-none-any.whl", hash = "sha256:ad592f91cccc42093d4a2d680383d1a93b9ac4e5a747e4baa7be5d7f71b96c04"},
+    {file = "youtube_transcript_api-0.4.1.tar.gz", hash = "sha256:69c208c220b2a4b3e4e86366cde321bc1c3cea79e8e8b8bbc1249b703e7b8f73"},
 ]

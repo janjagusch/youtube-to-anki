@@ -38,7 +38,7 @@ def make_package(
     audio_chunks: Iterable[AudioSegment],
     transcript_chunks: Iterable[Dict],
     deck_name: str,
-    deck_id: str,
+    deck_id: int,
     filepath: str,
 ) -> Package:
     """

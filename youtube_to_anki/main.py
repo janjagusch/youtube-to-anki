@@ -22,9 +22,7 @@ def make_package(
     audio_chunks = tuple(
         process_audio_chunk(audio, chunk) for chunk in transcript_chunks
     )
-    _make_package(
-        audio_chunks, transcript_chunks, deck_name, str(hash(deck_name)), filepath
-    )
+    _make_package(audio_chunks, transcript_chunks, deck_name, hash(deck_name), filepath)
 
 
 # pylint: disable=no-value-for-parameter
