@@ -52,3 +52,23 @@ youtube-to-anki calls [youtube-transcript-api](https://github.com/jdepoix/youtub
 
 - 🇯🇵: [Yuzuhiko's Cat Hands EP 280 | Atashin'chi](https://www.youtube.com/watch?v=Uw6ONSGyWZ4)
 - 🇩🇪: [Nicos Weg – A1 – Folge 3: Tschüss!](https://www.youtube.com/watch?v=idFrq0H1Af0) (here you'll have to set `--transcript-language de`)
+
+## FAQ
+
+### Video IDs Starting with `-`
+
+If your video ID starts with an `-`, e.g. `-qAuGimugds` the CLI will try to parse this as an option, which can result in strange errors like this:
+
+```
+youtube-to-anki --transcript-language=de -qAuGimugds
+Usage: youtube-to-anki [OPTIONS] VIDEO_ID
+Try 'youtube-to-anki --help' for help.
+
+Error: no such option: -q
+```
+
+Instead you will have to separate the CLI options and the video ID with a `--` like this:
+
+```
+youtube-to-anki --transcript-language de -- -qAuGimugds
+```
