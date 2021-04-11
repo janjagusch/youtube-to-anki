@@ -10,7 +10,7 @@ python = "^3.8"
 genanki = "^0.10"
 pydub = "^0.25"
 youtube_dl = "2021.04.07"
-youtube_transcript_api = "0.4"
+youtube_transcript_api = "^0.4"
 click = "^7.1"
 
 [tool.poetry.dev-dependencies]
