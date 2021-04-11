@@ -6,24 +6,23 @@ Takes a YouTube video with audio in your target language and transcript (subtitl
 
 ## Installation
 
-### PyPI
+### `conda`
+
+The preferred way to install this package is using [conda](https://github.com/conda/conda):
+
+```
+conda install youtube-to-anki
+```
+
+### `pip`
+
+You can also install it through pip:
 
 ```
 pip install youtube-to-anki
 ```
 
-Note: When you install this package though `pip`, you will have to manually install [ffmpeg](https://ffmpeg.org/download.html) afterwards. One easy way to accomplish this is with [conda](https://docs.conda.io/en/latest/).
-
-```
-conda create --name youtube-to-anki ffmpeg pip
-conda activate youtube-to-anki
-pip install youtube-to-anki
-youtube-to-anki --help
-```
-
-### Conda
-
-Coming soon ...
+However, when you install this package though `pip`, you will have to manually install [ffmpeg](https://ffmpeg.org/download.html) afterwards.
 
 ## Usage
 
