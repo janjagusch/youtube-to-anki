@@ -131,4 +131,5 @@ dmypy.json
 
 *.apkg
 .vscode/
+.idea/
 .DS_Store

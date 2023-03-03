@@ -7,17 +7,18 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
-genanki = "^0.10"
+python = "^3.10"
+genanki = "^0.13"
 pydub = "^0.25"
-youtube_dl = "2021.04.07"
-youtube_transcript_api = "^0.4"
-click = "^7.1"
+yt_dlp = "^2023.2.17"
+youtube_transcript_api = ">0.4"
+click = ">8.0"
+opencv_python = "^4.7.0.68"
 
 [tool.poetry.dev-dependencies]
-black = "20.8b1"
+black = "^22.12"
 pylint = "^2.7"
-mypy = "0.812"
+mypy = "1.0.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
