@@ -2,7 +2,6 @@
 This module contains functions to retrieve metadata from a YouTube video.
 """
 
-
 import json
 import urllib.parse
 import urllib.request

@@ -14,13 +14,13 @@ from youtube_to_anki.youtube import retrieve_audio, retrieve_video, retrieve_inf
 
 
 def make_package(
-    transcript: Iterable[Dict], audio: AudioSegment, video: cv2.VideoCapture, deck_name: str, filepath: str
+        transcript: Iterable[Dict], audio: AudioSegment, video: cv2.VideoCapture, deck_name: str, filepath: str
 ):
     """
     Creates an Anki package from audio and transcript.
     """
     transcript_chunks = tuple(process_transcript_chunk(chunk) for chunk in transcript)
-    screenshots = take_screenshots(video, transcript_chunks) if video is not None else [-1]*len(transcript_chunks)
+    screenshots = take_screenshots(video, transcript_chunks) if video is not None else [-1] * len(transcript_chunks)
     audio_chunks = tuple(
         process_audio_chunk(audio, chunk) for chunk in transcript_chunks
     )
@@ -46,10 +46,10 @@ def make_package(
 )
 @click.argument("video-id")
 def main(
-    video_id: str,
-    transcript_language: str,
-    screenshot_resolution: int,
-    out: str,
+        video_id: str,
+        transcript_language: str,
+        screenshot_resolution: int,
+        out: str,
 ):
     """
     Converts a YouTube video into an Anki deck.

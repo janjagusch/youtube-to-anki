@@ -2,12 +2,10 @@
 This module contains functions to make Anki notes and packages.
 """
 
-
+import cv2
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from typing import Dict, Iterable
-
-import cv2
 from genanki import Deck, Model, Note, Package
 from numpy import ndarray
 from pydub import AudioSegment
@@ -46,12 +44,12 @@ def _make_note(nl_transcript: str, tl_audio_file: str, screenshot: str) -> Note:
 
 
 def make_package(
-    audio_chunks: Iterable[AudioSegment],
-    screenshots: Iterable[str],
-    transcript_chunks: Iterable[Dict],
-    deck_name: str,
-    deck_id: int,
-    filepath: str,
+        audio_chunks: Iterable[AudioSegment],
+        screenshots: Iterable[str],
+        transcript_chunks: Iterable[Dict],
+        deck_name: str,
+        deck_id: int,
+        filepath: str,
 ) -> Package:
     """
     Creates an Anki deck, packages it and writes it to file path.
@@ -59,7 +57,7 @@ def make_package(
     deck = Deck(deck_id=deck_id, name=deck_name)
     with TemporaryDirectory() as tempdir:
         for i, (audio_chunk, transcript_chunk, screenshot) in enumerate(
-            zip(audio_chunks, transcript_chunks, screenshots)
+                zip(audio_chunks, transcript_chunks, screenshots)
         ):
             audio_chunk.export(f"{tempdir}/{i}_{deck_id}.mp3")
             if isinstance(screenshot, ndarray):

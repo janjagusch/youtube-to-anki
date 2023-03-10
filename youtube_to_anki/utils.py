@@ -2,9 +2,8 @@
 This module contains utility functions.
 """
 
-from typing import Dict, Iterable, Tuple
-
 import cv2
+from typing import Dict, Iterable, Tuple
 from numpy import ndarray
 from pydub import AudioSegment
 
@@ -25,7 +24,8 @@ def process_audio_chunk(audio: AudioSegment, chunk: Dict) -> AudioSegment:
     """
     Indexes an audio segment by the start and end timestamp provided in the transcript chunk.
     """
-    return audio[chunk["start"] : chunk["end"]]
+    return audio[chunk["start"]: chunk["end"]]
+
 
 def take_screenshots(video: cv2.VideoCapture, chunks: Tuple[Dict]) -> Iterable[ndarray]:
     """
