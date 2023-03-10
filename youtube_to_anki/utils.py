@@ -32,13 +32,9 @@ def take_screenshots(video: cv2.VideoCapture, chunks: Tuple[Dict]) -> Iterable[n
     Processes a video, for each interval taking a screenshot (ndarray, colors last) at around the middle of the interval
     """
     screenshots = []
-    # 30 ms offset to account for delay until the next frame
-    ms_targets = ((chunk["start"] + chunk["end"]) // 2 - 30 for chunk in chunks)
-    while True:
-        try:
-            ms_target = ms_targets.__next__()
-        except StopIteration:
-            break
+    for chunk in chunks:
+        # 30 ms offset to account for the average delay until the next frame
+        ms_target = (chunk["start"] + chunk["end"]) // 2 - 30
         while video.isOpened():
             success, frame = video.read()
             if success:
