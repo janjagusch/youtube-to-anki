@@ -20,7 +20,7 @@ def make_package(
     Creates an Anki package from audio and transcript.
     """
     transcript_chunks = tuple(process_transcript_chunk(chunk) for chunk in transcript)
-    screenshots = take_screenshots(video, transcript_chunks)
+    screenshots = take_screenshots(video, transcript_chunks) if video is not None else [-1]*len(transcript_chunks)
     audio_chunks = tuple(
         process_audio_chunk(audio, chunk) for chunk in transcript_chunks
     )
@@ -35,9 +35,9 @@ def make_package(
     help="Where to export the deck. Defaults to '<deck_name>.apgk'.",
 )
 @click.option(
-    "--resolution",
-    default=360,
-    help="Video resolution (p). Defaults to 360.",
+    "--screenshot-resolution",
+    default=-1,
+    help="Experimental. Adds screenshots with the specified resolution in pixel height, e.g. 360. Defaults to no screenshots being taken.",
 )
 @click.option(
     "--transcript-language",
@@ -48,7 +48,7 @@ def make_package(
 def main(
     video_id: str,
     transcript_language: str,
-    resolution: int,
+    screenshot_resolution: int,
     out: str,
 ):
     """
@@ -56,7 +56,7 @@ def main(
     """
     url = f"https://www.youtube.com/watch?v={video_id}"
     transcript = retrieve_transcript(video_id, transcript_language)
-    video = retrieve_video(url, resolution)
+    video = retrieve_video(url, screenshot_resolution) if screenshot_resolution != -1 else None
     audio = retrieve_audio(url)
     deck_name = retrieve_info(video_id)
     out = out or f"{deck_name}.apkg"
