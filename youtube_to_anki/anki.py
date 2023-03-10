@@ -17,8 +17,8 @@ style = """
 """
 
 _MODEL = Model(
-    1601234219,
-    "YoutubeWithScreenshot",
+    1607392319,
+    "Youtube",
     fields=[
         {"name": "TL-Audio"},
         {"name": "NL-Transcript"},

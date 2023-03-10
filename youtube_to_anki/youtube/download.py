@@ -50,7 +50,7 @@ def retrieve_audio(url: str) -> AudioSegment:
 
 def retrieve_video(url: str, resolution: int) -> cv2.VideoCapture:
     """
-    Downloads audio from YouTube URL and returns it as AudioSegment.
+    Downloads audio from YouTube URL and returns it as a cv2 VideoCapture.
     """
     with TemporaryDirectory() as tempdir:
         path = f"{tempdir}/temp.mp4"
